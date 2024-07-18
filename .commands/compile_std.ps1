@@ -1,0 +1,11 @@
+$VCToolsInstallDir = "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130"
+$WindowsSdkIncludeDir = "C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0"
+$cl = "$VCToolsInstallDir\bin\Hostx64\x64\cl.exe"
+$std_module = "$VCToolsInstallDir\modules\std.ixx"
+$include1 = "$VCToolsInstallDir\include"
+$include2 = "$WindowsSdkIncludeDir\um"
+$include3 = "$WindowsSdkIncludeDir\ucrt"
+$include4 = "$WindowsSdkIncludeDir\shared"
+$include5 = "$WindowsSdkIncludeDir\winrt"
+$cmd = "&`"$cl`" /std:c++latest /EHsc /nologo /W4 /c `"$std_module`" /I `"$include1`" /I `"$include2`" /I `"$include3`" /I `"$include4`" /I `"$include5`""
+Invoke-Expression $cmd
